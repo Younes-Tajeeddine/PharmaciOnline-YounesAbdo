@@ -34,6 +34,10 @@ public class Livraison {
 
     private String livreur;
 
+    // Coordonnées GPS de l'adresse de livraison
+    private Double latitude;
+    private Double longitude;
+
     @Transient
     private Commande commande;
 

@@ -20,6 +20,12 @@ public class CustomerRestController {
         return repo.findAll();
     }
 
+    @GetMapping("/{id}")
+    public Customer getById(@PathVariable Long id) {
+        return repo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Customer not found with id: " + id));
+    }
+
     @PostMapping
     public Customer save(@RequestBody Customer customer) {
         return repo.save(customer);

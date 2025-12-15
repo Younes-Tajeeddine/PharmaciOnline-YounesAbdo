@@ -5,9 +5,14 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "commande-service", url = "http://localhost:8082")
+import java.util.List;
+
+@FeignClient(name = "commande-service")
 public interface CommandeRestClient {
 
-    @GetMapping("/commandes/{id}")
+    @GetMapping("/api/commandes")
+    List<Commande> getAllCommandes();
+
+    @GetMapping("/api/commandes/{id}")
     Commande getCommandeById(@PathVariable Long id);
 }
