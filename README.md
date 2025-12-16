@@ -13,34 +13,7 @@ Le système est conçu pour être **scalable**, **modulaire** et **facilement ex
 
 L’application suit une architecture **microservices** avec un **API Gateway** et un **service de découverte**.
 
-┌──────────────────────────────────────────────┐
-│ FRONTEND (React) │
-│ http://localhost:3000
- │
-└─────────────────────────┬────────────────────┘
-│
-┌─────────────────────────▼────────────────────┐
-│ API GATEWAY (Spring Cloud Gateway) │
-│ http://localhost:8888
- │
-└─────────────────────────┬────────────────────┘
-│
-┌─────────────────┼─────────────────┐
-│ │ │
-┌───────▼────────┐ ┌──────▼────────┐ ┌──────▼────────┐
-│ CLIENT SERVICE │ │ PRODUIT │ │ COMMANDE │
-│ Port : 8081 │ │ SERVICE │ │ SERVICE │
-│ │ │ Port : 8082 │ │ Port : 8083 │
-└────────────────┘ └────────────────┘ └──────┬────────┘
-│
-┌────────▼────────┐
-│ LIVRAISON │
-│ SERVICE │
-│ Port : 8084 │
-└─────────────────┘
+## 🖼️ Aperçu du projet
 
-┌──────────────────────────────────────────────┐
-│ DISCOVERY SERVICE (Eureka) │
-│ http://localhost:8761
- │
-└──────────────────────────────────────────────┘
+![Architecture Microservices](images/architecture.png)
+
